@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "<h1>Hello from my CI/CD Pipeline!</h1><p>Build successful!</p>"
+    return render_template('index.html')
 
 @app.route('/health')
 def health():
@@ -12,7 +12,3 @@ def health():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-    
-#hello
-#final test
-#test
